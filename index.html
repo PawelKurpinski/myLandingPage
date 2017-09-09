@@ -20,35 +20,35 @@
     <nav class="nav">
         <div class="container">
             <ul>
-                <li><a href="#">O mnie</a> </li>
-                <li><a href="#">Oferta</a></li>
-                <li><a href="#">Projekty</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="#o-mnie">O mnie</a> </li>
+                <li><a href="#oferta">Oferta</a></li>
+                <li><a href="#projekty">Projekty</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </div>
     </nav>
-    <section class="section">
+    <section class="section" id="o-mnie">
         <div class="container">
         <h2>O mnie</h2>
         <p>lorem ipsum dolor neus menikolis est nutra menta sistra dex altis monti Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur aspernatur reprehenderit quis, vel numquam inventore, voluptatum a velit, porro accusamus hic debitis. Quo,
             delectus rerum eveniet tempore laborum ipsa distinctio. </p>
         </div>
     </section>
-    <section class="section">
+    <section class="section" id="oferta">
         <div class="container">
         <h2>Oferta</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit cupiditate dolores similique saepe quis incidunt minus repellat ab error deserunt doloremque fuga ratione, numquam accusantium et eum repudiandae amet, enim. lorem ipsum dolor
             neus menikolis est nutra menta sistra dex altis monti</p>
         </div>
     </section>
-    <section class="section">
+    <section class="section" id="projekty">
         <div class="container">
         <h2>Projekty</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum voluptatem temporibus, officiis provident ipsa, sed pariatur et quia perferendis facilis tempore adipisci eveniet perspiciatis qui mollitia, voluptatibus quam deserunt numquam! lorem
             ipsum dolor neus menikolis est nutra menta sistra dex altis monti</p>
         </div>
     </section>
-    <section class="section">
+    <section class="section" id="kontakt">
         <div class="container">
         <h2>Kontakt</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum voluptatem temporibus, officiis provident ipsa, sed pariatur et quia perferendis facilis tempore adipisci eveniet perspiciatis qui mollitia, voluptatibus quam deserunt numquam! lorem
@@ -60,7 +60,27 @@
         <p>&copy;Pablo, 2016</p>
         </div>
     </footer>
+    <script src="jquery.js"></script>
+    <script src="stickyfill.js"></script>
+    <script>
+        $('.nav').Stickyfill();
 
+        $(function() {
+			  $('a[href*="#"]:not([href="#"])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html,body').stop().animate({
+			          scrollTop: target.offset().top - 70
+			        }, 1000);
+			        return false;
+			      }
+			    }
+			  });
+			});
+
+    </script>
 </body>
 
 </html>
